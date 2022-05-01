@@ -27,7 +27,7 @@ export const MoviePage = () => {
   console.log('MoviePage-location:', location);
   // console.log('navigate:', navigate());
   return (
-    <>
+    <div>
       <button style={{ display: 'flex' }} type="button" onClick={onBack}>
         Go Back
       </button>
@@ -60,6 +60,6 @@ export const MoviePage = () => {
           <Outlet context={movie} />
         </div>
       )}
-    </>
+    </div>
   );
 };

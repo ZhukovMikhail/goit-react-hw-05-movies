@@ -6,12 +6,14 @@ import { MoviePage } from './pages/MoviePage/MoviePage';
 import { Cast } from './pages/Cast/Cast';
 import { Reviews } from './pages/Reviews/Reviews';
 import { NotFound } from './pages/NotFound/NotFound';
+import { Container } from './App.styled';
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Navlinks />}>
-        <Route index element={<Home />} />
+    <Container>
+      <Navlinks />
+      <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="movies" element={<Movies />}></Route>
         <Route path="movies/:movieId" element={<MoviePage />}>
           <Route path="cast" element={<Cast />} />
@@ -19,7 +21,7 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </Container>
   );
 };
