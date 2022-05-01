@@ -22,7 +22,7 @@ export const MoviePage = () => {
     });
   }, [movieId]);
   const onBack = e => {
-    navigate(`/movies`);
+    navigate(`${location.state.from.pathname}${location.state.from.search}`);
   };
   console.log('MoviePage-location:', location);
   // console.log('navigate:', navigate());

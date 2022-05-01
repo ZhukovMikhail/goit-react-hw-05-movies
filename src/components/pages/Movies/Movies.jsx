@@ -7,6 +7,9 @@ export const Movies = () => {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
   let location = useLocation();
+  let params = new URLSearchParams(location.search);
+
+  query === '' && params.get('query') !== null && setQuery(params.get('query'));
 
   const onSubmit = e => {
     e.preventDefault();
@@ -16,7 +19,7 @@ export const Movies = () => {
       pathname: `/movies`,
       search: `?query=${value}`,
     };
-    // navigate(location.search, { state: { from: location } });
+
     navigate(location.search);
   };
 
@@ -31,6 +34,7 @@ export const Movies = () => {
       .catch(e => console.log(e));
   }, [query]);
   console.log('Movies-location:', location);
+  console.log('Movies-params:', params.get('query'));
 
   return (
     <>
@@ -42,7 +46,9 @@ export const Movies = () => {
         <ul>
           {movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`${movie.id}`}>{movie.title}</Link>
+              <Link to={`${movie.id}`} state={{ from: location }}>
+                {movie.title}
+              </Link>
             </li>
           ))}
         </ul>
