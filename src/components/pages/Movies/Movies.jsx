@@ -1,19 +1,25 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import * as Api from 'service/api';
 
 export const Movies = () => {
   const [movies, setMovies] = useState();
   const [query, setQuery] = useState('');
-
-  //   const {url} = useRouteMatch();
+  const navigate = useNavigate();
+  let location = useLocation();
 
   const onSubmit = e => {
     e.preventDefault();
     const { value } = e.target.elements.movie;
-    console.log(e.target.elements.movie.value);
     setQuery(value);
+    location = {
+      pathname: `/movies`,
+      search: `?query=${value}`,
+    };
+    // navigate(location.search, { state: { from: location } });
+    navigate(location.search);
   };
+
   useEffect(() => {
     if (query === '') {
       return;
@@ -21,10 +27,10 @@ export const Movies = () => {
     Api.searchMovie(query)
       .then(r => {
         setMovies(r);
-        console.log(r);
       })
       .catch(e => console.log(e));
   }, [query]);
+  console.log('Movies-location:', location);
 
   return (
     <>
@@ -36,7 +42,7 @@ export const Movies = () => {
         <ul>
           {movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+              <Link to={`${movie.id}`}>{movie.title}</Link>
             </li>
           ))}
         </ul>

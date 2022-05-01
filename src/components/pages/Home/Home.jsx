@@ -10,7 +10,6 @@ export const Home = () => {
     Api.trendingMovie()
       .then(r => {
         setMovies(r);
-        console.log(r);
       })
       .catch(e => console.log(e));
   }, []);
@@ -22,7 +21,7 @@ export const Home = () => {
         <ul>
           {movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+              <Link to={`movies/${movie.id}`}>{movie.title}</Link>
             </li>
           ))}
         </ul>

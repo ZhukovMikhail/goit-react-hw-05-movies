@@ -5,9 +5,8 @@ export const Cast = () => {
   const movie = useOutletContext();
   return (
     <div>
-      <h1>Casts</h1>
+      <h1>Cast</h1>
       <ul>
-        {console.log('movie', movie)}
         {movie.credits.cast.map(a => (
           <li key={a.id}>
             <h5>{a.name}</h5>

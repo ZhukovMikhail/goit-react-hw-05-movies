@@ -1,14 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, Outlet, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  useParams,
+  Outlet,
+  useNavigate,
+  useLocation,
+} from 'react-router-dom';
 import { MovieBox, MovieInfo } from './MoviePage.styled';
-// import { Cast } from '../Cast/Cast';
+
 import * as Api from 'service/api';
-// import { Reviews } from '../Reviews/Reviews';
 
 export const MoviePage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     Api.movieDetails(movieId).then(r => {
@@ -18,7 +24,8 @@ export const MoviePage = () => {
   const onBack = e => {
     navigate(`/movies`);
   };
-
+  console.log('MoviePage-location:', location);
+  // console.log('navigate:', navigate());
   return (
     <>
       <button style={{ display: 'flex' }} type="button" onClick={onBack}>
@@ -48,8 +55,8 @@ export const MoviePage = () => {
           </MovieBox>
           <h4>Additional information</h4>
 
-          <Link to={`/movies/${movie.id}/cast`}>Cast</Link>
-          <Link to={`/movies/${movie.id}/reviews`}>Reviews</Link>
+          <Link to={`cast`}>Cast</Link>
+          <Link to={`reviews`}>Reviews</Link>
           <Outlet context={movie} />
         </div>
       )}

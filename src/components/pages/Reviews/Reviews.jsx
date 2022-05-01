@@ -6,7 +6,6 @@ export const Reviews = () => {
     <div>
       <h1>reviews</h1>
       <ul>
-        {console.log('movie', movie)}
         {movie.reviews.results.map(r => (
           <li key={r.id}>
             <h5>{r.author}</h5>
