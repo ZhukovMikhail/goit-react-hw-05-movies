@@ -2,18 +2,20 @@ import { useOutletContext } from 'react-router-dom';
 
 export const Reviews = () => {
   const movie = useOutletContext();
-  return (
+  console.log(movie.reviews.results);
+  return movie.reviews.results.length !== 0 ? (
     <div>
-      <h1>reviews</h1>
       <ul>
         {movie.reviews.results.map(r => (
           <li key={r.id}>
-            <h5>{r.author}</h5>
+            <h4>{r.author}</h4>
             <p>{r.content}</p>
             <p>{r.created_at}</p>
           </li>
         ))}
       </ul>
     </div>
+  ) : (
+    <h4>There is no reviews yet</h4>
   );
 };

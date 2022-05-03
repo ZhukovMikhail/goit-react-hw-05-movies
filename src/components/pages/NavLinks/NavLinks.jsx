@@ -3,8 +3,12 @@ import { Outlet } from 'react-router-dom';
 export const Navlinks = () => {
   return (
     <div>
-      <StyledNavLink to="/">Home</StyledNavLink>
-      <StyledNavLink to="movies">Movies</StyledNavLink>
+      <StyledNavLink to="/" style={{ textDecoration: 'none' }}>
+        Home
+      </StyledNavLink>
+      <StyledNavLink to="movies" style={{ textDecoration: 'none' }}>
+        Movies
+      </StyledNavLink>
       <Outlet />
     </div>
   );

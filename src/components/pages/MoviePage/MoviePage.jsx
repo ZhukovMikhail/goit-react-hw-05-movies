@@ -1,65 +1,89 @@
 import { useState, useEffect } from 'react';
+import { useParams, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
-  Link,
-  useParams,
-  Outlet,
-  useNavigate,
-  useLocation,
-} from 'react-router-dom';
-import { MovieBox, MovieInfo } from './MoviePage.styled';
-
+  MovieBox,
+  MovieInfo,
+  Container,
+  LinkBox,
+  Linky,
+  ImgContainer,
+  Image,
+  AddInfo,
+  Sp,
+} from './MoviePage.styled';
 import * as Api from 'service/api';
 
 export const MoviePage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
+  const [error, setError] = useState();
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    Api.movieDetails(movieId).then(r => {
-      setMovie(r);
-    });
+    setError(null);
+    Api.movieDetails(movieId)
+      .then(r => {
+        setMovie(r);
+      })
+      .catch(e => setError(e.message));
   }, [movieId]);
+
   const onBack = e => {
-    navigate(`${location.state.from.pathname}${location.state.from.search}`);
+    location.state !== null
+      ? navigate(`${location.state.from.pathname}${location.state.from.search}`)
+      : navigate(`/`);
   };
-  console.log('MoviePage-location:', location);
-  // console.log('navigate:', navigate());
+
   return (
-    <div>
+    <Container
+      path={`${Api.IMG_BASE_URL}${Api.IMG_ORIG}${movie && movie.backdrop_path}`}
+    >
+      {error && <h3>{`...sorry ${error} occured`}</h3>}
       <button style={{ display: 'flex' }} type="button" onClick={onBack}>
         Go Back
       </button>
       {movie && (
         <div>
           <MovieBox>
-            <img
-              src={`${Api.IMG_BASE_URL}${Api.IMG_W200}${movie.poster_path}`}
-              alt={movie.title}
-            />
+            <ImgContainer>
+              <Image
+                src={`${Api.IMG_BASE_URL}${Api.IMG_W500}${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </ImgContainer>
             <MovieInfo>
               <h3>{movie.title}</h3>
-              <p>{movie.tagline}</p>
+              <Sp>{movie.tagline}</Sp>
               <h4>Overview</h4>
-              <p>{movie.overview}</p>
-              {/* <img
-            src={`${Api.IMG_BASE_URL}${Api.IMG_ORIG}${movie.backdrop_path}`}
-            alt={movie.title}
-          /> */}
+              <span>{movie.overview}</span>
               <h4>Genres</h4>
               {movie.genres.map(g => (
                 <span key={g.id}>{g.name}</span>
               ))}
             </MovieInfo>
           </MovieBox>
-          <h4>Additional information</h4>
+          <AddInfo>Additional information</AddInfo>
+          <LinkBox>
+            <Linky
+              style={{ textDecoration: 'none' }}
+              to={`cast`}
+              state={location.state && { from: location.state.from }}
+            >
+              Cast
+            </Linky>
+            <Linky
+              style={{ textDecoration: 'none' }}
+              to={`reviews`}
+              state={location.state && { from: location.state.from }}
+            >
+              Reviews
+            </Linky>
+          </LinkBox>
 
-          <Link to={`cast`}>Cast</Link>
-          <Link to={`reviews`}>Reviews</Link>
           <Outlet context={movie} />
         </div>
       )}
-    </div>
+    </Container>
   );
 };
