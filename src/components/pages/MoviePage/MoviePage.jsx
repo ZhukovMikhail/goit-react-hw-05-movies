@@ -10,6 +10,7 @@ import {
   Image,
   AddInfo,
   Sp,
+  Button,
 } from './MoviePage.styled';
 import * as Api from 'service/api';
 
@@ -40,9 +41,9 @@ export const MoviePage = () => {
       path={`${Api.IMG_BASE_URL}${Api.IMG_ORIG}${movie && movie.backdrop_path}`}
     >
       {error && <h3>{`...sorry ${error} occured`}</h3>}
-      <button style={{ display: 'flex' }} type="button" onClick={onBack}>
-        Go Back
-      </button>
+
+      <Button onClick={onBack} />
+
       {movie && (
         <div>
           <MovieBox>

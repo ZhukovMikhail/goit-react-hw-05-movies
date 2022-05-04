@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
+import { n } from 'utils/util';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   margin: 1vw;
-  margin-top: 20px;
-  width: 98vw;
+
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,17 +13,35 @@ export const Container = styled.div`
 export const Gallery = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin-left: -10px;
-  margin-top: -10px;
+  margin-left: calc((-10px * ${n}));
+  margin-top: calc((-10px * ${n}));
 `;
 export const GalleryItem = styled.li`
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: calc((10px * ${n}));
+  margin-top: calc((10px * ${n}));
   list-style: none;
-  flex-basis: calc((100% - 50px) / 5);
+  flex-basis: calc((100% - 50px * ${n}) / 5);
+
+  position: relative;
+  width: 100%;
+
+  background-image: linear-gradient(
+    rgba(121, 142, 230, 0.9),
+    rgba(255, 255, 255, 0.6)
+  );
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 4px 5px 6px 0px rgba(64, 63, 63, 0.75);
+  -webkit-box-shadow: 4px 5px 6px 0px rgba(64, 63, 63, 0.75);
+  -moz-box-shadow: 4px 5px 6px 0px rgba(64, 63, 63, 0.75);
+  transition: 300ms;
+  &:hover,
+  :focus {
+    transform: scale(1.04);
+  }
 `;
 export const ImgContainer = styled.div`
-  min-height: 28.5vw;
+  /* min-height: 28.5vw; */
 `;
 export const Image = styled.img`
   display: block;
@@ -29,24 +49,9 @@ export const Image = styled.img`
   overflow: hidden;
 `;
 
-export const FilmBox = styled.div`
-  position: relative;
-  width: 100%;
-  height: 34vw;
-  background-image: linear-gradient(
-    rgba(121, 142, 230, 0.904),
-    rgba(179, 179, 179, 0.4)
-  );
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 4px 5px 6px 0px rgba(64, 63, 63, 0.75);
-  -webkit-box-shadow: 4px 5px 6px 0px rgba(64, 63, 63, 0.75);
-  -moz-box-shadow: 4px 5px 6px 0px rgba(64, 63, 63, 0.75); ;
-`;
 export const Span = styled.span`
   display: inline-block;
   font-size: 1.3vw;
-  /* margin-left: 5.5vw; */
 `;
 export const SpanBox = styled.div`
   margin-top: 3px;
@@ -62,17 +67,25 @@ export const MovieTitle = styled.h5`
   text-decoration: none;
 `;
 export const TittleBox = styled.div`
-  max-height: 6.5vw;
+  height: 5vw;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   color: #110070;
+  padding-bottom: 5px;
 `;
 
 export const Rate = styled.span`
   position: absolute;
-  bottom: 5px;
-  right: 5px;
+  top: 3px;
+  right: 3px;
   display: inline-block;
   font-size: 1.3vw;
+  background-color: #e2931b;
+  border-radius: 1px;
+  padding: 2px;
+`;
+
+export const Linky = styled(Link)`
   text-decoration: none;
 `;

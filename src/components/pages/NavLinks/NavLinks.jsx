@@ -1,15 +1,14 @@
-import { StyledNavLink } from 'components/App.styled';
-import { Outlet } from 'react-router-dom';
+import { StyledNavLink, LinkBox } from './NavLinks.styled';
+
 export const Navlinks = () => {
   return (
-    <div>
+    <LinkBox>
       <StyledNavLink to="/" style={{ textDecoration: 'none' }}>
         Home
       </StyledNavLink>
       <StyledNavLink to="movies" style={{ textDecoration: 'none' }}>
         Movies
       </StyledNavLink>
-      <Outlet />
-    </div>
+    </LinkBox>
   );
 };

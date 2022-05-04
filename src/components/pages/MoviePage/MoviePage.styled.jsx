@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 
 export const Container = styled.div`
   background-image: linear-gradient(
@@ -10,7 +11,10 @@ export const Container = styled.div`
   background-size: cover;
   min-height: 95vh;
   color: wheat;
-  width: 98vw;
+  width: 100vw;
+  /* margin-bottom: 10px; */
+  border-radius: 5px;
+  overflow: hidden;
 `;
 export const MovieBox = styled.div`
   display: flex;
@@ -27,10 +31,7 @@ export const MovieInfo = styled.div`
     border-bottom: 1px solid wheat;
     margin-top: 20px;
   }
-  /* & p {
-    margin-top: 5px;
-    border-bottom: 1px solid wheat;
-  } */
+
   & span {
     display: inline-block;
     margin-top: 10px;
@@ -66,4 +67,26 @@ export const AddInfo = styled.h4`
   border-bottom: 1px solid wheat;
   text-align: center;
 `;
-// export const MovieInfo = styled.div``;
+export const Button = styled(BsFillArrowLeftCircleFill)`
+  display: inline-block;
+  position: fixed;
+  top: 1.2vw;
+  left: 0.8vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  z-index: 1000;
+  border-radius: 50%;
+
+  font-size: 1vw;
+  border: none;
+  fill: wheat;
+  transition: 300ms;
+
+  &:hover,
+  :focus {
+    fill: #ffffff;
+    transform: scale(1.15);
+  }
+`;
+
+// export const Button = styled(BsFillArrowLeftCircleFill)``;
