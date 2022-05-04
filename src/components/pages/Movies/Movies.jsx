@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as Api from 'service/api';
 import { MovieGalley } from 'components/elements/MovieGallery/MovieGallery';
-// import { data } from 'utils/arr'; was neded without Internet
+// import { data } from 'utils/arr'; was needed without Internet
 import { Container } from '../Home/Home.styled';
 import { Form, Input, Button, Layout } from './Movies.styled';
 import { Paginator } from 'components/elements/Paginator/Paginator';

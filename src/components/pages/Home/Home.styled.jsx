@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import * as Api from 'service/api';
 
 export const Container = styled.div`
-  width: 100vw;
-  height: max-content;
+  /* width: 100vw; */
+  /* height: max-content; */
   background-image: linear-gradient(
       rgba(11, 16, 36, 0.904),
       rgba(61, 61, 61, 0.4)
