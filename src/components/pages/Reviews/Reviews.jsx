@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 
-export const Reviews = () => {
+const Reviews = () => {
   const movie = useOutletContext();
   console.log(movie.reviews.results);
   return movie.reviews.results.length !== 0 ? (
@@ -19,3 +19,4 @@ export const Reviews = () => {
     <h4>There is no reviews yet</h4>
   );
 };
+export default Reviews;

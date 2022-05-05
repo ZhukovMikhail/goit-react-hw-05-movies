@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   margin: 1vw;
-
   width: 100%;
   display: flex;
   flex-direction: column;

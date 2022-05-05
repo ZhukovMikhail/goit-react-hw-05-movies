@@ -14,7 +14,7 @@ import {
 } from './MoviePage.styled';
 import * as Api from 'service/api';
 
-export const MoviePage = () => {
+const MoviePage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
   const [error, setError] = useState();
@@ -88,3 +88,5 @@ export const MoviePage = () => {
     </Container>
   );
 };
+
+export default MoviePage;

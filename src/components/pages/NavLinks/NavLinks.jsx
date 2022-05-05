@@ -3,7 +3,7 @@ import { StyledNavLink, LinkBox } from './NavLinks.styled';
 export const Navlinks = () => {
   return (
     <LinkBox>
-      <StyledNavLink to="/" style={{ textDecoration: 'none' }}>
+      <StyledNavLink to="/main" style={{ textDecoration: 'none' }}>
         Home
       </StyledNavLink>
       <StyledNavLink to="movies" style={{ textDecoration: 'none' }}>

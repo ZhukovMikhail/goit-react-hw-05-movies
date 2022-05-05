@@ -21,6 +21,10 @@ export const Input = styled.input`
   border-bottom-left-radius: 4px;
   background-color: #f7f3ee;
   color: #4848a3;
+  ::placeholder {
+    color: rgba(72, 72, 163, 0.5);
+    font-style: italic;
+  }
 `;
 export const Button = styled.button`
   font-size: 1.8vw;

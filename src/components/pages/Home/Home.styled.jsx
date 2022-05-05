@@ -3,13 +3,14 @@ import * as Api from 'service/api';
 
 export const Container = styled.div`
   /* width: 100vw; */
-  /* height: max-content; */
+  /* height: 100vh; */
   background-image: linear-gradient(
       rgba(11, 16, 36, 0.904),
       rgba(61, 61, 61, 0.4)
     ),
     url(${props => Api.moviesIndx(props.movies, props.index)});
-  background-size: cover;
+  /* background-size: auto; */
+  background-repeat: repeat;
   background-attachment: fixed;
   & h2 {
     color: wheat;

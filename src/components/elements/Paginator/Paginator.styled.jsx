@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Integer = styled.p`
+export const Integer = styled.div`
   border-radius: 5px;
   width: 2vw;
   display: flex;
@@ -40,7 +40,7 @@ export const Button = styled.button`
   }
 `;
 
-export const ButtonBox = styled.p`
+export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px;

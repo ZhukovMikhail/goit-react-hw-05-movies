@@ -14,8 +14,7 @@ export const Spinner = styled.div`
   z-index: 1000;
   & div {
     width: 12vw;
-
-    height: 20vw;
+    align-items: center;
     display: flex;
     justify-content: space-between;
   }
@@ -28,61 +27,61 @@ export const Spinner = styled.div`
 
 export const Bar1 = styled.span`
   width: 3vw;
-  /* height: 10vw; */
+  height: 10vw;
   border-radius: 6px;
   background-color: rgba(0, 0, 255, 0.7);
   animation: animate1 500ms infinite 1000ms;
   @keyframes animate1 {
     0% {
-      transform: scale(1);
+      transform: scaleY(1);
     }
 
     50% {
-      transform: scale(1.5);
+      transform: scaleY(1.5);
     }
 
     100% {
-      transform: scale(1);
+      transform: scaleY(1);
     }
   }
 `;
 export const Bar2 = styled.span`
   width: 3vw;
-  /* height: 10vw; */
+  height: 15vw;
   border-radius: 6px;
   background-color: rgba(0, 0, 255, 0.7);
   animation: animate2 500ms infinite 1000ms;
   @keyframes animate2 {
     0% {
-      transform: scale(1.5);
+      transform: scaleY(1.5);
     }
 
     50% {
-      transform: scale(1);
+      transform: scaleY(1);
     }
 
     100% {
-      transform: scale(1);
+      transform: scaleY(1);
     }
   }
 `;
 export const Bar3 = styled.span`
   width: 3vw;
-  /* height: 10vw; */
+  height: 10vw;
   border-radius: 6px;
   background-color: rgba(0, 0, 255, 0.7);
   animation: animate3 500ms infinite 1000ms;
   @keyframes animate3 {
     0% {
-      transform: scale(1.25);
+      transform: scaleY(1.25);
     }
 
     50% {
-      transform: scale(0.75);
+      transform: scaleY(0.75);
     }
 
     100% {
-      transform: scale(1.25);
+      transform: scaleY(1.25);
     }
   }
 `;

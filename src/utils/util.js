@@ -1,10 +1,10 @@
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-export const n = 4;
+export const n = 2;
 
 const errorId = 'error-id';
 const warnId = 'warn-id';
+const redirId = 'redir-id';
 
 export const errorNotify = () =>
   toast.error('Nothing found...', {
@@ -28,29 +28,24 @@ export const warnNotify = () =>
     draggable: true,
   });
 
-//   const toastId = React.useRef(null);
+export const error404Notify = message =>
+  toast.error(`${message}`, {
+    toastId: errorId,
+    position: 'top-center',
+    autoClose: 1000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+  });
 
-//   function handleUpload() {
-//     axios
-//       .request({
-//         method: 'post',
-//         url: '/foobar',
-//         data: myData,
-//         onUploadProgress: p => {
-//           const progress = p.loaded / p.total;
-
-//           // check if we already displayed a toast
-//           if (toastId.current === null) {
-//             toastId.current = toast('Upload in Progress', { progress });
-//           } else {
-//             toast.update(toastId.current, { progress });
-//           }
-//         },
-//       })
-//       .then(data => {
-//         // Upload is done!
-//         // The remaining progress bar will be filled up
-//         // The toast will be closed when the transition end
-//         toast.done(toastId.current);
-//       });
-//   }
+export const redirectNotify = () =>
+  toast.warn(' Redirected to /main', {
+    toastId: redirId,
+    position: 'top-right',
+    autoClose: 1000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+  });

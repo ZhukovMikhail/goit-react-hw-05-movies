@@ -8,7 +8,7 @@ import {
   Name,
   PhotoBox,
 } from './Cast.styled';
-export const Cast = () => {
+const Cast = () => {
   const movie = useOutletContext();
   return (
     <Container>
@@ -32,3 +32,4 @@ export const Cast = () => {
     </Container>
   );
 };
+export default Cast;
