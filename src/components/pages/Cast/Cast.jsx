@@ -8,6 +8,7 @@ import {
   Name,
   PhotoBox,
 } from './Cast.styled';
+
 const Cast = () => {
   const movie = useOutletContext();
   return (
@@ -20,7 +21,8 @@ const Cast = () => {
                 src={
                   a.profile_path
                     ? `${Api.IMG_BASE_URL}${Api.IMG_W200}${a.profile_path}`
-                    : 'https://planbphoto.com/wp-content/uploads/Serze.jpg'
+                    : // : 'https://planbphoto.com/wp-content/uploads/Serze.jpg'
+                      require('../../../utils/photoMe.jpg')
                 }
                 alt={a.name}
               />

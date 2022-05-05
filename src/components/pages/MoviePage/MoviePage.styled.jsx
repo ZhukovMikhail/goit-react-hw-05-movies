@@ -57,6 +57,7 @@ export const ImgContainer = styled.div`
   overflow: hidden;
   border-radius: 2%;
   margin-left: 20px;
+  margin-top: 20px;
 `;
 export const Image = styled.img`
   display: block;
