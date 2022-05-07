@@ -48,7 +48,7 @@ const NotFound = () => {
 
       <p style={{ textAlign: 'center', marginTop: '10px' }}>
         <BiTimeFive />
-        {`Redirecting in ${time >= 0 && time} seconds`}
+        {`Redirecting in ${time > 0 && time} seconds`}
         <BiTimeFive />
       </p>
     </div>
