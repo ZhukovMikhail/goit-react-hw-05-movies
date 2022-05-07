@@ -27,7 +27,7 @@ const Movies = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    const { value } = e.target.elements.movie;
+    const { value } = e.target.elements.movie.trim();
     if (value.trim() === '') {
       Notify.warnNotify();
       return;
