@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.263eca3b.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.17a0250c.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.37cbb0ed.js",
     "main-page.js": "/goit-react-hw-05-movies/static/js/main-page.959d907a.chunk.js",
-    "movies-page.js": "/goit-react-hw-05-movies/static/js/movies-page.12da0eeb.chunk.js",
+    "movies-page.js": "/goit-react-hw-05-movies/static/js/movies-page.3cd9dd52.chunk.js",
     "movieDetails-page.js": "/goit-react-hw-05-movies/static/js/movieDetails-page.db9296f8.chunk.js",
     "cast-page.js": "/goit-react-hw-05-movies/static/js/cast-page.3116135e.chunk.js",
     "reviews-page.js": "/goit-react-hw-05-movies/static/js/reviews-page.e5067cf8.chunk.js",
@@ -16,9 +16,9 @@
     "static/media/photoMe.jpg": "/goit-react-hw-05-movies/static/media/photoMe.bc6b4ea6886b70a7ef87.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.263eca3b.css.map": "/goit-react-hw-05-movies/static/css/main.263eca3b.css.map",
-    "main.17a0250c.js.map": "/goit-react-hw-05-movies/static/js/main.17a0250c.js.map",
+    "main.37cbb0ed.js.map": "/goit-react-hw-05-movies/static/js/main.37cbb0ed.js.map",
     "main-page.959d907a.chunk.js.map": "/goit-react-hw-05-movies/static/js/main-page.959d907a.chunk.js.map",
-    "movies-page.12da0eeb.chunk.js.map": "/goit-react-hw-05-movies/static/js/movies-page.12da0eeb.chunk.js.map",
+    "movies-page.3cd9dd52.chunk.js.map": "/goit-react-hw-05-movies/static/js/movies-page.3cd9dd52.chunk.js.map",
     "movieDetails-page.db9296f8.chunk.js.map": "/goit-react-hw-05-movies/static/js/movieDetails-page.db9296f8.chunk.js.map",
     "cast-page.3116135e.chunk.js.map": "/goit-react-hw-05-movies/static/js/cast-page.3116135e.chunk.js.map",
     "reviews-page.e5067cf8.chunk.js.map": "/goit-react-hw-05-movies/static/js/reviews-page.e5067cf8.chunk.js.map",
@@ -31,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.263eca3b.css",
-    "static/js/main.17a0250c.js"
+    "static/js/main.37cbb0ed.js"
   ]
 }
