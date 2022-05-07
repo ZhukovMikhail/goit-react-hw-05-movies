@@ -27,20 +27,25 @@ const MoviePage = () => {
       .then(r => {
         setMovie(r);
       })
-      .catch(e => setError(e.message));
-  }, [movieId]);
+      .catch(e => {
+        setError(e.message);
+        navigate(`/*`);
+      });
+  }, [movieId, navigate]);
 
   const onBack = e => {
     location.state !== null
       ? navigate(`${location.state.from.pathname}${location.state.from.search}`)
-      : navigate(`/`);
+      : navigate(`/main`);
   };
 
   return (
     <Container
       path={`${Api.IMG_BASE_URL}${Api.IMG_ORIG}${movie && movie.backdrop_path}`}
     >
-      {error && <h3>{`...sorry ${error} occured`}</h3>}
+      {error && (
+        <h3 style={{ textAlign: 'center' }}>{`...sorry ${error} occured`}</h3>
+      )}
 
       <Button onClick={onBack} />
 

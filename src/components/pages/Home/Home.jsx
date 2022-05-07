@@ -28,7 +28,7 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    setError(null);
+    setError(false);
 
     if (query === 'tranding' || location.search === '') {
       if (location.search === '') {

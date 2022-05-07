@@ -60,10 +60,6 @@ const Movies = () => {
     if (query === '') {
       return;
     }
-    // if (location.search === '') {
-    //   setQuery('');
-    //   setMovies(null);
-    // }
 
     Api.searchMovie(query, page)
       .then(r => {
@@ -76,8 +72,9 @@ const Movies = () => {
       .catch(e => {
         Notify.error404Notify(e.message);
         setError(e.message);
+        navigate('/main');
       });
-  }, [query, page, location.search]);
+  }, [query, page, location.search, navigate]);
 
   //=========== Without internet ==============
   // useEffect(() => {
@@ -100,6 +97,7 @@ const Movies = () => {
     navigate(location.search);
   };
 
+  error && navigate('/main');
   return (
     <>
       <ToastContainer />
@@ -114,7 +112,9 @@ const Movies = () => {
         />
         <Button type="submit">Search Movie</Button>
       </Form>
-      {error && <h3>{`...sorry ${error} occured`}</h3>}
+      {error && (
+        <h3 style={{ textAlign: 'center' }}>{`...sorry ${error} occured`}</h3>
+      )}
       {movies?.length > 0 ? (
         <Container movies={movies} index={index}>
           {loading && <Loader />}
