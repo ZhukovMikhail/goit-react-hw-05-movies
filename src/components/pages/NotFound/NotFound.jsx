@@ -23,6 +23,8 @@ const NotFound = () => {
       navigate('/main');
     }
   }, [navigate, time]);
+  console.log('time:', time);
+  console.log('timerId:', timerId);
 
   return (
     <div
