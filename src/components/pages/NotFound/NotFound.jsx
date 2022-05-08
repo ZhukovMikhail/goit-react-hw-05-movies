@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 import { BiTimeFive, BiError } from 'react-icons/bi';
 
+const setTimer = 5;
 const NotFound = () => {
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(setTimer);
 
   let navigate = useNavigate();
 
-  const ref = useRef(new Date().getTime() + 5000);
+  const ref = useRef(new Date().getTime() + setTimer * 1000);
 
   const timerId = useRef(
     setInterval(() => {
@@ -46,7 +47,6 @@ const NotFound = () => {
 
       <p style={{ textAlign: 'center', marginTop: '10px' }}>
         <BiTimeFive />
-        {/* {`Redirecting in ${time > 0 && time} seconds`} */}
         {`Redirecting in ${time} seconds`}
         <BiTimeFive />
       </p>
