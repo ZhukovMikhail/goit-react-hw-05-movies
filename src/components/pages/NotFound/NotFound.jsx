@@ -9,18 +9,16 @@ const NotFound = () => {
 
   let navigate = useNavigate();
 
-  const ref = useRef(
+  const ref = useRef(new Date().getTime() + 5000);
+
+  const timerId = useRef(
     setInterval(() => {
-      setTime(t => t - 1);
-      time <= 0 && setTime(0);
+      setTime(Math.ceil((ref.current - Date.now()) / 1000));
     }, 1000)
   );
-
-  console.log('timerId', ref);
-
   useEffect(() => {
     if (time <= 0) {
-      clearInterval(ref.current);
+      clearInterval(timerId.current);
       navigate('/main');
     }
   }, [navigate, time]);
@@ -48,7 +46,8 @@ const NotFound = () => {
 
       <p style={{ textAlign: 'center', marginTop: '10px' }}>
         <BiTimeFive />
-        {`Redirecting in ${time > 0 && time} seconds`}
+        {/* {`Redirecting in ${time > 0 && time} seconds`} */}
+        {`Redirecting in ${time} seconds`}
         <BiTimeFive />
       </p>
     </div>

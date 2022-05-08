@@ -29,7 +29,9 @@ const MoviePage = () => {
       })
       .catch(e => {
         setError(e.message);
-        navigate(`/*`);
+        setTimeout(() => {
+          navigate(`/page-not-found`); // просто щоб не було строці пошуку не стояло "/*"
+        }, 500);
       });
   }, [movieId, navigate]);
 
